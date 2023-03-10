@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "[user]" > /etc/wsl.conf
+echo "default="$1 >> /etc/wsl.conf
+mv /home/starfish /home/$1
+groupmod -n $1 starfish
+usermod -l $1 -d /home/$1 starfish
+
