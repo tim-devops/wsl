@@ -1,4 +1,8 @@
 #!/bin/bash
+# This script in /root folder, runs by root, use PS>wsl -d <distro> -u root
+# syntax ./change-wsl-owner <new-owner>
+
+# TODO: Add check if $1 does not exist, then print usage
 echo "[user]" > /etc/wsl.conf
 echo "default="$1 >> /etc/wsl.conf
 mv /home/starfish /home/$1
